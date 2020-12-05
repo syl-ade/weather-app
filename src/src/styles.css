@@ -1,0 +1,133 @@
+body {
+  background-image: url("https://papers.co/wallpaper/papers.co-bd94-minimal-space-art-illustration-29-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: 105%;
+}
+
+#app {
+  margin: 30px auto;
+  padding: 50px;
+  size: 90%;
+  border-radius: 20px;
+  color: rgb(66, 27, 45);
+  font-family: "Maven Pro", sans-serif;
+}
+form {
+  display: inline;
+}
+#search-bar {
+  margin-bottom: 50px;
+}
+button#metric,
+button#imperial {
+  margin: 0 10px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  position: relative;
+  top: -30px;
+}
+
+input#submit {
+  width: 150px;
+  height: 39px;
+  margin: 20px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #dad2cf;
+  display: inline;
+}
+input#text {
+  width: 300px;
+  height: 30px;
+  margin-left: 50px;
+  margin-right: 30px;
+  position: relative;
+  left: 30px;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.current-location {
+  margin: 20px auto;
+}
+.col.max-min {
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  top: -10px;
+}
+
+.col.day {
+  text-align: center;
+}
+
+.fa-cloud-showers-heavy {
+  color: rgb(150, 148, 148);
+  font-size: 50px;
+}
+
+.fa-cloud {
+  color: rgb(173, 173, 173);
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+.fa-sun {
+  color: rgb(255, 233, 30);
+  font-size: 50px;
+  color: rgb(255, 233, 30);
+}
+.fas {
+  margin: 20px auto;
+  text-align: center;
+}
+.forecast {
+  margin-top: 40px;
+}
+#current-button {
+  width: 85px;
+  height: 38px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #dad2cf;
+  display: inline;
+}
+
+#current-location {
+  font-size: 30px;
+  text-align: center;
+}
+#unit-button {
+  height: 60px;
+}
+
+#temperature {
+  font-size: 50px;
+  text-align: center;
+}
+
+#current-time {
+  font-size: 30px;
+  margin-top: 15px;
+}
+#big-sun {
+  color: rgb(255, 233, 30);
+  font-size: 90px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+#parameters {
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+#details {
+  position: relative;
+  left: 60px;
+  top: -10px;
+}
