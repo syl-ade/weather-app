@@ -12,6 +12,10 @@ body {
   color: rgb(66, 27, 45);
   font-family: "Maven Pro", sans-serif;
 }
+#open-sourced {
+  margin: 40px 50px;
+  font-size: 15px;
+}
 form {
   display: inline;
 }
