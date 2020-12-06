@@ -1,17 +1,18 @@
 body {
   background-image: url("https://papers.co/wallpaper/papers.co-bd94-minimal-space-art-illustration-29-wallpaper.jpg");
   background-repeat: no-repeat;
-  background-size: 105%;
 }
 
 #app {
   margin: 30px auto;
-  padding: 50px;
-  size: 90%;
+  padding: 20px;
+  width: 80%;
   border-radius: 20px;
   color: rgb(66, 27, 45);
   font-family: "Maven Pro", sans-serif;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
 #open-sourced {
   margin: 40px 50px;
   font-size: 15px;
@@ -19,9 +20,7 @@ body {
 form {
   display: inline;
 }
-#search-bar {
-  margin-bottom: 50px;
-}
+
 button#metric,
 button#imperial {
   margin: 0 10px 10px;
@@ -106,9 +105,6 @@ input#text {
   font-size: 30px;
   text-align: center;
 }
-#unit-button {
-  height: 60px;
-}
 
 #temperature {
   font-size: 50px;
@@ -122,8 +118,9 @@ input#text {
 #big-sun {
   color: rgb(255, 233, 30);
   font-size: 90px;
-  margin-top: 20px;
   margin-left: 40px;
+  position: relative;
+  top: 40px;
 }
 #parameters {
   font-size: 15px;
@@ -133,5 +130,5 @@ input#text {
 #details {
   position: relative;
   left: 60px;
-  top: -10px;
+  top: 20px;
 }
