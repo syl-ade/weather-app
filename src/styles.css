@@ -34,6 +34,7 @@ input#submit {
   margin-top: 5px;
   position: relative;
   top: -1px;
+  margin-left: 20px;
 }
 input#text {
   width: 250px;
@@ -90,7 +91,7 @@ input#text {
 }
 #search-bar {
   padding: 0 100px;
-  margin-bottom: 20px;
+  margin: 15px auto;
 }
 
 #open-source {
@@ -106,9 +107,9 @@ input#text {
   border-radius: 8px;
   background-color: #dad2cf;
   display: inline;
-  margin-top: 5px;
   position: relative;
   top: -1px;
+  margin-left: 20px;
 }
 
 #current-location {
