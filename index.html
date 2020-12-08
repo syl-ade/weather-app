@@ -27,7 +27,11 @@
         <div id="app">
           <div id="search-bar">
             <form class="location">
-              <input type="text" placeholder="Type a location..." id="text" />
+              <input
+                type="text"
+                placeholder="   Type a location..."
+                id="text"
+              />
               <input type="submit" value="Check the weather" id="submit" />
             </form>
             <button id="current-button">Currently</button>
@@ -39,7 +43,10 @@
                 <div id="current-time">--:--</div>
                 <div id="parameters">
                   <div>Humidity: <span id="humidity"></span>%</div>
-                  <div>Wind: <span id="wind"></span>km/h</div>
+                  <div>
+                    Wind: <span id="wind"></span
+                    ><span id="wind-unit">km/h</span>
+                  </div>
 
                   <div>Pressure: <span id="pressure"></span> hPa</div>
                 </div>
@@ -98,10 +105,12 @@
         </div>
       </div>
     </div>
-    <div id="open-sourced">
-      <a href="https://github.com/syl-ade/weather-app">Open-sourced </a>by
-      Sylwia Aderek
-    </div>
+    <footer>
+      <a href="https://github.com/syl-ade/weather-app">Open-source</a> code by
+      <a href="https://www.linkedin.com/in/sylwiaaderek" target="_blank"
+        >Sylwia Aderek</a
+      >
+    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>

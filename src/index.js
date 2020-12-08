@@ -16,7 +16,7 @@ let months = [
   "Sep",
   "Oct",
   "Nov",
-  "Dec"
+  "Dec",
 ];
 let month = months[now.getMonth()];
 currentDate.innerHTML = `${day}, ${date} ${month} ${year}`;
@@ -49,7 +49,7 @@ function showWeather(response) {
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
 }
 
-function checkTheWeather(event) {
+function checkTheWeatherMetric(event) {
   event.preventDefault();
   if (typedLocation.value) {
     currentLocation.innerHTML = typedLocation.value;
@@ -62,7 +62,7 @@ function checkTheWeather(event) {
   }
 }
 let form = document.querySelector("form");
-form.addEventListener("submit", checkTheWeather);
+form.addEventListener("submit", checkTheWeatherMetric);
 
 function retrieveLocation(position) {
   let latitude = position.coords.latitude;
