@@ -121,13 +121,22 @@ input#text {
   font-size: 48px;
   text-align: center;
 }
+#description {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  position: relative;
+  left: -20px;
+}
+#description::first-letter {
+  text-transform: uppercase;
+}
 
 #current-time {
   font-size: 27px;
   margin-top: 15px;
 }
 #main-icon {
-  font-size: 85px;
   margin-left: 40px;
   position: relative;
   top: 40px;
@@ -140,5 +149,5 @@ input#text {
 #details {
   position: relative;
   left: 80px;
-  top: 20px;
+  top: 10px;
 }

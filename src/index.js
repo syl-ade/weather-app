@@ -38,8 +38,9 @@ let minTemp = document.querySelector("#min-temp");
 
 let typedLocation = document.querySelector("#text");
 let currentLocation = document.querySelector("#current-location");
+let descriptionElement = document.querySelector("#description");
 let iconElement = document.querySelector("#main-icon");
-iconElement.setAttribute("src", "http://openweathermap.org/img/wn/10d@2x.png");
+iconElement.setAttribute("src", "");
 
 function showWeather(response) {
   temperature.innerHTML = Math.round(response.data.main.temp);
@@ -49,9 +50,10 @@ function showWeather(response) {
   currentLocation.innerHTML = response.data.name;
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
