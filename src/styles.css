@@ -126,8 +126,7 @@ input#text {
   font-size: 27px;
   margin-top: 15px;
 }
-#big-sun {
-  color: rgb(255, 233, 30);
+#main-icon {
   font-size: 85px;
   margin-left: 40px;
   position: relative;

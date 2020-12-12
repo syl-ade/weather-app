@@ -38,6 +38,8 @@ let minTemp = document.querySelector("#min-temp");
 
 let typedLocation = document.querySelector("#text");
 let currentLocation = document.querySelector("#current-location");
+let iconElement = document.querySelector("#main-icon");
+iconElement.setAttribute("src", "http://openweathermap.org/img/wn/10d@2x.png");
 
 function showWeather(response) {
   temperature.innerHTML = Math.round(response.data.main.temp);
@@ -47,9 +49,13 @@ function showWeather(response) {
   currentLocation.innerHTML = response.data.name;
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
-function checkTheWeatherMetric(event) {
+function checkTheWeather(event) {
   event.preventDefault();
   if (typedLocation.value) {
     currentLocation.innerHTML = typedLocation.value;
@@ -62,7 +68,7 @@ function checkTheWeatherMetric(event) {
   }
 }
 let form = document.querySelector("form");
-form.addEventListener("submit", checkTheWeatherMetric);
+form.addEventListener("submit", checkTheWeather);
 
 function retrieveLocation(position) {
   let latitude = position.coords.latitude;
@@ -79,3 +85,10 @@ function getPosition(event) {
 }
 let buttonCurrently = document.querySelector("#current-button");
 buttonCurrently.addEventListener("click", getPosition);
+
+function changeToImperial(event) {
+  event.preventDefault();
+}
+
+let imperialButton = document.querySelector("#imperial");
+imperialButton.addEventListener("click", changeToImperial);
