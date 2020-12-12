@@ -22,30 +22,6 @@ button#imperial {
   top: -30px;
 }
 
-input#submit {
-  width: 150px;
-  height: 38px;
-  font-size: 13px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  background-color: #dad2cf;
-  display: inline;
-  margin-top: 5px;
-  position: relative;
-  top: -1px;
-  margin-left: 20px;
-}
-input#text {
-  width: 250px;
-  height: 38px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 5px;
-  font-size: 15px;
-  padding-left: 30px;
-}
-
 .col.max-min {
   text-align: center;
   font-size: 17px;
@@ -78,7 +54,7 @@ input#text {
 }
 .forecast {
   margin-top: 25px;
-  padding: 0 40px;
+  padding: 0 65px;
 }
 #app {
   margin: 30px auto 0;
@@ -89,29 +65,37 @@ input#text {
   font-family: "Maven Pro", sans-serif;
   background-color: rgba(255, 255, 255, 0.2);
 }
-#search-bar {
-  padding: 0 100px;
-  margin: 15px auto;
-}
 
 #open-source {
   margin: 40px 50px;
   font-size: 13px;
 }
-#current-button {
-  width: 85px;
+input#submit {
+  width: 150px;
   height: 38px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   background-color: #dad2cf;
-  display: inline;
-  position: relative;
-  top: -1px;
-  margin-left: 20px;
+}
+input#text {
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
 }
 
+#current-button {
+  width: 80px;
+  height: 38px;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #dad2cf;
+  margin-left: 20px;
+}
 #current-location {
   font-size: 27px;
   text-align: center;
@@ -131,7 +115,10 @@ input#text {
 #description::first-letter {
   text-transform: uppercase;
 }
-
+#search-form {
+  display: block;
+  margin: 20px 80px;
+}
 #current-time {
   font-size: 27px;
   margin-top: 15px;
@@ -139,7 +126,7 @@ input#text {
 #main-icon {
   margin-left: 40px;
   position: relative;
-  top: 40px;
+  top: 20px;
 }
 #parameters {
   font-size: 13px;
