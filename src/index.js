@@ -29,27 +29,27 @@ if (minutes < 10) {
 
 currentTime.innerHTML = `${hours}h${minutes}`;
 
-let temperature = document.querySelector("#current-temperature");
-let humidity = document.querySelector("#humidity");
-let wind = document.querySelector("#wind");
-let pressure = document.querySelector("#pressure");
-let maxTemp = document.querySelector("#max-temp");
-let minTemp = document.querySelector("#min-temp");
+let temperatureElement = document.querySelector("#current-temperature");
+let humidityElement = document.querySelector("#humidity");
+let windElement = document.querySelector("#wind");
+let pressureElemet = document.querySelector("#pressure");
+let maxTempElement = document.querySelector("#max-temp");
+let minTempElement = document.querySelector("#min-temp");
 
 let typedLocation = document.querySelector("#text");
 let currentLocation = document.querySelector("#current-location");
 let descriptionElement = document.querySelector("#description");
 let iconElement = document.querySelector("#main-icon");
-iconElement.setAttribute("src", "");
 
 function showWeather(response) {
-  temperature.innerHTML = Math.round(response.data.main.temp);
-  humidity.innerHTML = response.data.main.humidity;
-  wind.innerHTML = response.data.wind.speed;
-  pressure.innerHTML = response.data.main.pressure;
+  celsiusTemp = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
+  pressureElemet.innerHTML = response.data.main.pressure;
   currentLocation.innerHTML = response.data.name;
-  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
+  minTempElement.innerHTML = Math.round(response.data.main.temp_min);
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
@@ -88,9 +88,22 @@ function getPosition(event) {
 let buttonCurrently = document.querySelector("#current-button");
 buttonCurrently.addEventListener("click", getPosition);
 
-function changeToImperial(event) {
+function showImperial(event) {
   event.preventDefault();
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemp);
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
 }
+function showMetric(event) {
+  event.preventDefault();
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+}
+let celsiusTemp = null;
 
-let imperialButton = document.querySelector("#imperial");
-imperialButton.addEventListener("click", changeToImperial);
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showImperial);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showMetric);

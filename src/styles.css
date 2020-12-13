@@ -21,12 +21,21 @@ button#imperial {
   position: relative;
   top: -30px;
 }
+.active {
+  color: rgb(66, 27, 45);
+  cursor: default;
+}
+.active:hover {
+  color: rgb(66, 27, 45);
+  cursor: default;
+  text-decoration: none;
+}
 
 .col.max-min {
   text-align: center;
-  font-size: 17px;
-  position: relative;
-  top: -10px;
+  font-size: 16px;
+
+  margin: auto 30px;
 }
 
 .col.day {
@@ -54,6 +63,8 @@ button#imperial {
 }
 .forecast {
   margin-top: 25px;
+  margin-bottom: 20px;
+
   padding: 0 65px;
 }
 #app {
@@ -87,7 +98,7 @@ input#text {
 }
 
 #current-button {
-  width: 80px;
+  width: 150px;
   height: 38px;
   font-size: 11px;
   font-weight: bold;
@@ -100,9 +111,18 @@ input#text {
   font-size: 27px;
   text-align: center;
 }
+#units {
+  font-size: 19px;
+  font-weight: bold;
+  position: relative;
+  top: -28px;
+}
+#max-min {
+  max-width: 250px;
+}
 
 #temperature {
-  font-size: 48px;
+  font-size: 60px;
   text-align: center;
 }
 #description {
@@ -124,7 +144,7 @@ input#text {
   margin-top: 15px;
 }
 #main-icon {
-  margin-left: 40px;
+  margin-left: 43px;
   position: relative;
   top: 20px;
 }

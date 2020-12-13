@@ -61,14 +61,13 @@
             <div class="col">
               <div id="current-location">-- -- -- --</div>
               <div id="temperature">
-                <span id="current-temperature">18</span
-                ><span class="unit">°C</span>
-                <div id="unit-button">
-                  <button id="metric">°C</button
-                  ><button id="imperial">°F</button>
-                </div>
+                <span id="current-temperature">--</span
+                ><span id="units"
+                  ><a href="#" class="active" id="celsius-link"> °C </a>|
+                  <a href="#" id="farenheit-link"> °F </a>
+                </span>
               </div>
-              <div class="row">
+              <div class="row" id="max-min">
                 <div class="col max-min">
                   max: <span id="max-temp"></span><span class="unit">°C</span>
                 </div>
