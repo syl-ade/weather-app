@@ -42,30 +42,37 @@ button#imperial {
   text-align: center;
 }
 
-.fa-cloud-showers-heavy {
-  color: rgb(150, 148, 148);
-  font-size: 45px;
+.weather-forecast h3 {
+  color: rgb(66, 27, 45);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
 }
 
-.fa-cloud {
-  color: rgb(173, 173, 173);
-  margin-bottom: 30px;
-  font-size: 45px;
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
 }
-.fa-sun {
-  color: rgb(255, 233, 30);
-  font-size: 45px;
-  color: rgb(255, 233, 30);
-}
-.fas {
-  margin: 20px auto;
+
+.weather-forecast-temp {
   text-align: center;
+  color: rgb(135, 135, 135);
+  font-size: 15px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
 }
-.forecast {
+
+#forecast {
   margin-top: 25px;
   margin-bottom: 20px;
-
-  padding: 0 65px;
+  padding: 0 75px;
 }
 #app {
   margin: 30px auto 0;
@@ -151,6 +158,8 @@ input#text {
 #parameters {
   font-size: 13px;
   margin-top: 15px;
+  position: relative;
+  bottom: -20px;
 }
 
 #details {
