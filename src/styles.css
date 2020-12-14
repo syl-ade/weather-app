@@ -41,6 +41,10 @@ button#imperial {
 .col.day {
   text-align: center;
 }
+.fa-map-marked-alt {
+  color: rgb(66, 27, 45);
+  font-size: 20px;
+}
 
 .weather-forecast h3 {
   color: rgb(66, 27, 45);
@@ -55,14 +59,15 @@ button#imperial {
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
 }
 
 .weather-forecast-temp {
   text-align: center;
-  color: rgb(135, 135, 135);
   font-size: 15px;
+  color: rgb(66, 27, 45);
+
   font-weight: 400;
   height: auto;
   line-height: 15px;
@@ -70,9 +75,9 @@ button#imperial {
 }
 
 #forecast {
-  margin-top: 25px;
+  margin-top: 35px;
   margin-bottom: 20px;
-  padding: 0 75px;
+  padding: 0 65px;
 }
 #app {
   margin: 30px auto 0;
@@ -105,7 +110,7 @@ input#text {
 }
 
 #current-button {
-  width: 150px;
+  width: 100px;
   height: 38px;
   font-size: 11px;
   font-weight: bold;
@@ -113,6 +118,7 @@ input#text {
   border-radius: 8px;
   background-color: #dad2cf;
   margin-left: 20px;
+  float: left;
 }
 #current-location {
   font-size: 27px;
