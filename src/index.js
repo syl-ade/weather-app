@@ -1,3 +1,4 @@
+// Indicating current date and time
 let currentDate = document.querySelector("#current-date");
 let now = new Date();
 let year = now.getFullYear();
@@ -67,6 +68,8 @@ function showWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
 }
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
@@ -83,9 +86,11 @@ function showForecast(response) {
                   forecast.weather[0].icon
                 }@2x.png" alt="${forecast.weather[0].description}"/>
                 <div class="weather-forecast-temp">
-                <strong>${Math.round(
+                <strong class="forecast-max-temp">${Math.round(
                   forecast.main.temp_max
-                )}°</strong> ${Math.round(forecast.main.temp_min)}°</div>
+                )}°</strong> <span class="forecast-min-temp">${Math.round(
+      forecast.main.temp_min
+    )}</span>°</div>
               </div>`;
   }
 }
@@ -128,12 +133,30 @@ function getPosition(event) {
 let buttonCurrently = document.querySelector("#current-button");
 buttonCurrently.addEventListener("click", getPosition);
 
+let farenheitLink = document.querySelector("#farenheit-link");
+let celsiusLink = document.querySelector("#celsius-link");
+
 function showImperial(event) {
   event.preventDefault();
   let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farenheitTemp);
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
+
+  let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
+  forecastMaxTempElement.forEach(function (item) {
+    let currentValue = item.innerHTML;
+    item.innerHTML = Math.round((currentValue * 9) / 5 + 32);
+  });
+
+  let forecastMinTempElement = document.querySelectorAll(".forecast-min-temp");
+  forecastMinTempElement.forEach(function (item) {
+    let currentValue = item.innerHTML;
+    item.innerHTML = Math.round((currentValue * 9) / 5 + 32);
+  });
+
+  fahrenheitLink.removeEventListener("click", showImperial);
+  celsiusLink.addEventListener("click", showMetric);
 }
 function showMetric(event) {
   event.preventDefault();
@@ -143,7 +166,5 @@ function showMetric(event) {
 }
 let celsiusTemp = null;
 
-let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", showImperial);
-let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showMetric);
