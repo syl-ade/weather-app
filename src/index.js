@@ -142,20 +142,17 @@ function showImperial(event) {
   temperatureElement.innerHTML = Math.round(farenheitTemp);
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
-
   let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
   forecastMaxTempElement.forEach(function (item) {
     let currentValue = item.innerHTML;
     item.innerHTML = Math.round((currentValue * 9) / 5 + 32);
   });
-
   let forecastMinTempElement = document.querySelectorAll(".forecast-min-temp");
   forecastMinTempElement.forEach(function (item) {
     let currentValue = item.innerHTML;
     item.innerHTML = Math.round((currentValue * 9) / 5 + 32);
   });
-
-  fahrenheitLink.removeEventListener("click", showImperial);
+  farenheitLink.removeEventListener("click", showImperial);
   celsiusLink.addEventListener("click", showMetric);
 }
 function showMetric(event) {
@@ -163,8 +160,18 @@ function showMetric(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
+  let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
+  forecastMaxTempElement.forEach(function (item) {
+    let currentValue = item.innerHTML;
+    item.innerHTML = Math.round(((currentValue - 32) * 5) / 9);
+  });
+  let forecastMinTempElement = document.querySelectorAll(".forecast-min-temp");
+  forecastMinTempElement.forEach(function (item) {
+    let currentValue = item.innerHTML;
+    item.innerHTML = Math.round(((currentValue - 32) * 5) / 9);
+  });
+  farenheitLink.addEventListener("click", showImperial);
+  celsiusLink.removeEventListener("click", showMetric);
 }
-let celsiusTemp = null;
 
 farenheitLink.addEventListener("click", showImperial);
-celsiusLink.addEventListener("click", showMetric);
