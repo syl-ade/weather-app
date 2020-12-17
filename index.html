@@ -31,6 +31,7 @@
                 <input
                   type="text"
                   placeholder="Type a location..."
+                  onfocus="this.value=''"
                   id="text"
                   class="form-control"
                 />
@@ -52,10 +53,10 @@
               <div id="parameters">
                 <div>Humidity: <span id="humidity"></span>%</div>
                 <div>
-                  Wind: <span id="wind"></span><span id="wind-unit">km/h</span>
+                  Wind: <span id="wind"></span><span id="wind-unit"> km/h</span>
                 </div>
 
-                <div>Pressure: <span id="pressure"></span> hPa</div>
+                <div>Pressure: <span id="pressure"></span ><span id="pressure-unit"> hPa</span></div>
               </div>
             </div>
             <div class="col">
@@ -64,15 +65,15 @@
                 <span id="current-temperature">--</span
                 ><span id="units"
                   ><a href="#" class="active" id="celsius-link"> °C </a>|
-                  <a href="#" id="farenheit-link"> °F </a>
+                  <a href="#" class="active" id="farenheit-link"> °F </a>
                 </span>
               </div>
               <div class="row" id="max-min">
                 <div class="col max-min">
-                  max: <span id="max-temp"></span><span class="unit">°C</span>
+                  max: <span id="max-temp"></span><span class="unit" id="unit-max"></span>
                 </div>
                 <div class="col max-min">
-                  min: <span id="min-temp"></span><span class="unit">°C</span>
+                  min: <span id="min-temp"></span><span class="unit" id="unit-min"></span>
                 </div>
               </div>
             </div>
