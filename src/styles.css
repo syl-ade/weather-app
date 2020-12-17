@@ -154,7 +154,9 @@ input#text {
 }
 #current-time {
   font-size: 27px;
-  margin-top: 15px;
+  margin-top: 20px;
+  position: relative;
+  top: 10px;
 }
 #main-icon {
   margin-left: 43px;
