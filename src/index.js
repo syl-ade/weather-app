@@ -86,9 +86,9 @@ function showForecast(response) {
                   forecast.weather[0].icon
                 }@2x.png" alt="${forecast.weather[0].description}"/>
                 <div class="weather-forecast-temp">
-                <strong class="forecast-max-temp">${Math.round(
+                <strong><span class="forecast-max-temp">${Math.round(
                   forecast.main.temp_max
-                )}°</strong> <span class="forecast-min-temp">${Math.round(
+                )}</span>°</strong> <span class="forecast-min-temp">${Math.round(
       forecast.main.temp_min
     )}</span>°</div>
               </div>`;
@@ -142,6 +142,7 @@ function showImperial(event) {
   temperatureElement.innerHTML = Math.round(farenheitTemp);
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
+
   let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
   forecastMaxTempElement.forEach(function (item) {
     let currentValue = item.innerHTML;
