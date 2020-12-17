@@ -47,11 +47,12 @@ let windElement = document.querySelector("#wind");
 let pressureElement = document.querySelector("#pressure");
 let maxTempElement = document.querySelector("#max-temp");
 let minTempElement = document.querySelector("#min-temp");
+let descriptionElement = document.querySelector("#description");
+let iconElement = document.querySelector("#main-icon");
 
 let typedLocation = document.querySelector("#text");
 let currentLocation = document.querySelector("#current-location");
-let descriptionElement = document.querySelector("#description");
-let iconElement = document.querySelector("#main-icon");
+
 let windUnit = document.querySelector("#wind-unit");
 let pressureUnit = document.querySelector("#pressure-unit");
 let unitTempMax = document.querySelector("#unit-max");
@@ -63,29 +64,30 @@ let pressure = null;
 let maxTemp = null;
 let minTemp = null;
 
-let searchbar = document.querySelector("input.form-control");
-
 function showWeather(response) {
-  celsiusTemp = response.data.main.temp;
-  windSpeed = response.data.wind.speed;
-  pressure = response.data.main.pressure;
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(windSpeed);
-  pressureElement.innerHTML = pressure;
   currentLocation.innerHTML = response.data.name;
+  celsiusTemp = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   maxTemp = response.data.main.temp_max;
   maxTempElement.innerHTML = Math.round(maxTemp);
   unitTempMax.innerHTML = "°C";
   minTemp = response.data.main.temp_min;
   minTempElement.innerHTML = Math.round(minTemp);
   unitTempMin.innerHTML = "°C";
+  //parameters
+  windSpeed = response.data.wind.speed;
+  windElement.innerHTML = Math.round(windSpeed);
+  pressure = response.data.main.pressure;
+  pressureElement.innerHTML = pressure;
+  humidityElement.innerHTML = response.data.main.humidity;
+  //icon
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  //conversion elements
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
 }
@@ -131,6 +133,7 @@ function checkTheWeather(event) {
     alert(`Type a location`);
   }
 }
+
 let form = document.querySelector("form");
 form.addEventListener("submit", checkTheWeather);
 
@@ -148,6 +151,8 @@ function retrieveLocation(position) {
   farenheitLink.addEventListener("click", showImperial);
 }
 
+let searchbar = document.querySelector("input.form-control");
+
 function getPosition(event) {
   event.preventDefault();
   searchbar.placeholder = `Type a location...`;
@@ -161,19 +166,21 @@ let celsiusLink = document.querySelector("#celsius-link");
 
 function showImperial(event) {
   event.preventDefault();
-  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(farenheitTemp);
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
-  windElement.innerHTML = Math.round(windSpeed / 1.609344);
-  windUnit.innerHTML = " mph";
-  pressureElement.innerHTML = Math.round(pressure * 0.02953);
-  pressureUnit.innerHTML = " inHg";
+  //temperature
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemp);
   maxTempElement.innerHTML = Math.round((maxTemp * 9) / 5 + 32);
   minTempElement.innerHTML = Math.round((minTemp * 9) / 5 + 32);
   unitTempMax.innerHTML = "°F";
   unitTempMin.innerHTML = "°F";
-
+  //parameters
+  windElement.innerHTML = Math.round(windSpeed / 1.609344);
+  windUnit.innerHTML = " mph";
+  pressureElement.innerHTML = Math.round(pressure * 0.02953);
+  pressureUnit.innerHTML = " inHg";
+  //forecast
   let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
   forecastMaxTempElement.forEach(function (item) {
     let currentValue = item.innerHTML;
@@ -189,18 +196,20 @@ function showImperial(event) {
 }
 function showMetric(event) {
   event.preventDefault();
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
-  windElement.innerHTML = Math.round(windSpeed);
-  windUnit.innerHTML = " km/h";
-  pressureElement.innerHTML = pressure;
-  pressureUnit.innerHTML = " hPa";
+  //temperature
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   maxTempElement.innerHTML = Math.round(maxTemp);
   minTempElement.innerHTML = Math.round(minTemp);
   unitTempMax.innerHTML = "°C";
   unitTempMin.innerHTML = "°C";
-
+  //parameters
+  windElement.innerHTML = Math.round(windSpeed);
+  windUnit.innerHTML = " km/h";
+  pressureElement.innerHTML = pressure;
+  pressureUnit.innerHTML = " hPa";
+  //forecast
   let forecastMaxTempElement = document.querySelectorAll(".forecast-max-temp");
   forecastMaxTempElement.forEach(function (item) {
     let currentValue = item.innerHTML;
