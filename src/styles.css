@@ -2,6 +2,8 @@ body {
   background-image: url("https://papers.co/wallpaper/papers.co-bd94-minimal-space-art-illustration-29-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 form {
